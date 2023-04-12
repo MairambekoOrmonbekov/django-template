@@ -1,0 +1,10 @@
+
+{% if Surname %}
+<ul>
+{% for question in Surname %}
+ <li><a href="{% url 'website:detail' Surname.id %}">rfgf{{ Surname.question_text }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
