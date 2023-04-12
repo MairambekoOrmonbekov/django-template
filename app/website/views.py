@@ -16,3 +16,4 @@ def index(request):
 def detail(request,pk):
     return ( request, Surname , pk:=id)
 
+# test
