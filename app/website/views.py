@@ -1,17 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views import generic
+from django.utils import  timezone
 from .models import Surname
 
 
 
 def index(request):
-    templates_name='website/surname_list.html'
-    name=Surname.objects.order_by(
+  
+    name=Surname.objects.filter( pub_date__lte=timezone.now()
         
-    )
+    ).order_by('-pub-date')
     return render(request, 'website/surname_list.html',{'name': name })
 
 
-# def detail(request,Surname_id):
-#     return (Surname, id= Surname_id)
+def detail(request,pk):
+    return ( request, Surname , pk:=id)
+

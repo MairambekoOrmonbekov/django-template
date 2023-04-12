@@ -7,7 +7,7 @@ app_name = 'website'
 urlpatterns = [
 
 path('',views.index, name='index'),
-path('<int:id/>/detail',views.detail, name='detail'),
+path('<int:pk>/detail/',views.detail, name='detail'),
 
 
 
