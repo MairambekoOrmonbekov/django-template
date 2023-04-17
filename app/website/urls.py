@@ -1,14 +1,10 @@
-from django.urls import path
-from . import views
+from rest_framework import routers
+from .views import SetViewSet
 
+router = routers.DefaultRouter()
+router.register('api/Set', SetViewSet, 'Surname' )
 
-app_name = 'website'
-
-urlpatterns = [
-
-path('',views.index, name='index'),
-path('<int:pk>/detail/',views.detail, name='detail'),
+urlpatterns = router.urls
 
 
 
-]
